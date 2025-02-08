@@ -1,5 +1,5 @@
 # 概要
-Reactハンズオンのために、Dockerを使用した環境構築
+React ハンズオンのために Docker を使用した環境構築ガイドです。
 
 # ディレクトリ構成  
 ``` 
@@ -16,13 +16,16 @@ react-docker-app
 ```
 
 # 利用方法　: React アプリを Docker で起動する
+以下の手順に従って、React アプリケーションを Docker で起動します。
+
+### 1. Dockerのインストール
 
 MAC
 Docker Desktop のインストール
 ```
 brew install --cask docker
 ```
-
+<br>
 WIN
 Docker Desktop のインストール 公式サイトからインストールしてください： Docker Desktop for Windows
 - インストール中の注意
@@ -30,18 +33,24 @@ Docker Desktop のインストール 公式サイトからインストールし�
  - インストール時に Enable the WSL 2 feature を選択。
 Docker Desktop を起動 インストール後、「Docker Desktop」を起動してください。
 
- 依存関係のインストール
+### 2. 依存関係のインストール
+Docker を使って必要な依存関係をインストールします。
  ```
 docker-compose run --rm app sh -c 'npm install --legacy-peer-deps'
-
  ```
+ ### 2. アプリケーションの起動
+ 以下のコマンドでアプリケーションを起動します。
 
- アプリケーションの起動
+bash
+コピーする
+編集する
+
  ```
 docker-compose up --build
  ```
 
- * 以下でアプリケーションを停止できる
+ ### 2.  アプリケーションの停止
+ アプリケーションを停止するには以下のコマンドを実行します。
  ```
 docker-compose down
  ```
