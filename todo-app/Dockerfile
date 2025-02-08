@@ -7,8 +7,12 @@ WORKDIR /usr/src/app
 # package.json と package-lock.json をコピー
 COPY package*.json ./
 
+# 依存関係のインストール、MUI含む
+RUN npm install @mui/material @emotion/react @emotion/styled
+
 # 依存関係のインストール
 RUN npm install
+
 
 # アプリケーションのソースコードをコピー
 COPY . .
