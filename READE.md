@@ -15,8 +15,33 @@ react-docker-app
 │   │   ├── tsconfig.json     # TypeScript 設定ファイル
 ```
 
-# 利用方法
-以下のコマンドを実行して、React アプリを Docker コンテナで実行する。
+# 利用方法　: React アプリを Docker で起動する
+
+MAC
+Docker Desktop のインストール
 ```
+brew install --cask docker
+```
+
+WIN
+Docker Desktop のインストール 公式サイトからインストールしてください： Docker Desktop for Windows
+- インストール中の注意
+ - WSL 2 の有効化（推奨設定）
+ - インストール時に Enable the WSL 2 feature を選択。
+Docker Desktop を起動 インストール後、「Docker Desktop」を起動してください。
+
+ 依存関係のインストール
+ ```
+docker-compose run --rm app sh -c 'npm install --legacy-peer-deps'
+
+ ```
+
+ アプリケーションの起動
+ ```
 docker-compose up --build
-```
+ ```
+
+ * 以下でアプリケーションを停止できる
+ ```
+docker-compose down
+ ```
