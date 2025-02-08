@@ -1,0 +1,17 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/usr/src/app
+      - ./app/react-app:/usr/src/app/react-app
+      - ./app/react-app/node_modules:/usr/src/app/react-app/node_modules
+      
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    working_dir: /usr/src/app/react-app
+    command: ["npm", "start"]
